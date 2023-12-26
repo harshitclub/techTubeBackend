@@ -1,6 +1,9 @@
+import dotenv from "dotenv";
 import mongoose, { Schema } from "mongoose";
 import bcrypt from "bcrypt";
 import jwt from "jsonwebtoken";
+
+dotenv.config();
 
 const userSchema = new Schema(
   {
@@ -27,7 +30,7 @@ const userSchema = new Schema(
     },
     avatar: {
       type: String, // cloudinary url
-      required: true,
+      default: "https://i.pravatar.cc/150?u=a042581f4e29026704d",
     },
     coverImage: {
       type: String, // cloudinary url
